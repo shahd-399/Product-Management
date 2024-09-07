@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management System</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- main CSS file -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="bg-secondary">
+    <div class="cruds container">
+        <div class="head p-2 text-center">
+            <h1 class="text-white">CRUDS</h1>
+            <p class="text-white">PRODUCT MANAGEMENT SYSTEM</p>
+        </div>
+        <div class="inputs">
+            <input class="form-control mb-3" type="text" placeholder="Title" id="title">
+            <div class="price">
+                <input onkeyup="getTotal()" class="form-control mb-3" type="number" id="price" placeholder="Price">
+                <input onkeyup="getTotal()" class="form-control mb-3" type="number" id="taxes" placeholder="Taxes">
+                <input onkeyup="getTotal()" class="form-control mb-3" type="number" id="ads" placeholder="ads">
+                <input onkeyup="getTotal()" class="form-control mb-3" type="number" id="discount" 
+                placeholder="Discount">
+                <span class="btn btn-info text-white" id="total"></span>
+            </div>
+            <input class="form-control mb-3" type="number" id="count" 
+            placeholder="Count">
+            <input class="form-control mb-3" type="text" id="category" 
+            placeholder="Category">
+            <button class="btn btn-info text-white w-100 mb-3 rounded-pill" id="submit-btn">Create</button>
+            <button class="d-none btn btn-primary text-white w-100 mb-3 rounded-pill" id="update-btn">Update</button>
+        </div>
+        <div class="outputs">
+            <div class="searchBlock">
+                <input class="form-control mb-2" type="text" id="search" placeholder="Search">
+                <div class="btnSearch row justify-content-between px-3">
+                    <button onclick="getSearchMood(this.id)" id="searchTitle" class="col-md-5 btn btn-info text-white mb-2 rounded-pill">Search By Title</button>
+                    <button onclick="getSearchMood(this.id)" id="searchCategory" class="col-md-5 btn btn-info text-white mb-2 rounded-pill">Search By Category</button>
+                </div>
+            </div>
+
+            <button class="d-none btn btn-info text-white w-100 mb-3 rounded-pill mt-3" id="deleteAll" onclick="deleteAllFunc()"></button>
+
+            <table class="table my-2">
+                <thead>
+                    <tr class="text-uppercase">
+                        <th scope="col">Id</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Taxes</th>
+                        <th scope="col">Ads</th>
+                        <th scope="col">Discount</th>
+                        <th scope="col">Total</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Update</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+
+
+                <tbody id="tableBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
